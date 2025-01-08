@@ -15,8 +15,10 @@
 	String nombre = request.getParameter("nombre");
 	String apellidos = request.getParameter("apellidos");
 	String fechaTexto = request.getParameter("fecha");
-	String lenguaje= request.getParameter("lenguaje");
-	
+	String lenguaje = request.getParameter("lenguaje");
+
+	int nivel = Integer.parseInt(request.getParameter("nivel"));
+
 	Calendar calendario = Calendar.getInstance();
 
 	//convierto un texto de cadena en una fecha Date con un 
@@ -30,11 +32,20 @@
 	out.println(nombre);
 	out.println(apellidos);
 	out.println(calendario.getTime());
-	
-	
+
+	out.println("<br/>");
+
+	if (nivel == 1) {
+
+		out.println("el nivel es basico");
+	} else if (nivel == 2) {
+		out.println("el nivel es intermedio");
+	} else {
+		out.println("el nivel es alto");
+	}
 	%>
 
-<p>
+	<p>
 		el lenguaje favorito es :
 		<%=lenguaje%>
 	</p>
