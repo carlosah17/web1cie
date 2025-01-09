@@ -16,6 +16,9 @@
 	String apellidos = request.getParameter("apellidos");
 	String fechaTexto = request.getParameter("fecha");
 	String lenguaje = request.getParameter("lenguaje");
+	String nuevoTexto = request.getParameter("nuevo");
+	
+	boolean nuevo= Boolean.parseBoolean(nuevoTexto);
 
 	int nivel = Integer.parseInt(request.getParameter("nivel"));
 
@@ -61,6 +64,11 @@
 		el dia es :
 		<%=calendario.get(Calendar.DATE)%>
 	</p>
-
+<p>
+		<% if (nuevo) {%>
+		
+		 <b>es nuevo</b>
+		 <%} %>
+</p>
 </body>
 </html>
