@@ -20,7 +20,7 @@
 	String[] lista=request.getParameterValues("dispositivos");
 	
 	boolean nuevo= Boolean.parseBoolean(nuevoTexto);
-
+	
 	int nivel = Integer.parseInt(request.getParameter("nivel"));
 
 	Calendar calendario = Calendar.getInstance();
