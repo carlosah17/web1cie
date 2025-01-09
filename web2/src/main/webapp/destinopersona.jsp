@@ -17,6 +17,7 @@
 	String fechaTexto = request.getParameter("fecha");
 	String lenguaje = request.getParameter("lenguaje");
 	String nuevoTexto = request.getParameter("nuevo");
+	String[] lista=request.getParameterValues("dispositivos");
 	
 	boolean nuevo= Boolean.parseBoolean(nuevoTexto);
 
@@ -31,7 +32,12 @@
 	Date fecha = formateador.parse(fechaTexto);
 
 	calendario.setTime(fecha);
-
+	out.println("<ul>");
+	for (int i=0;i<lista.length;i++) {
+		System.out.println(lista[i]);
+		out.println("<li>"+lista[i]+"</li>");
+	}
+	out.println("</ul>");
 	out.println(nombre);
 	out.println(apellidos);
 	out.println(calendario.getTime());
