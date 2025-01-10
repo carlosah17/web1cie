@@ -8,13 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="estilo.css">
 </head>
 <%
 LibroRepository repo = new LibroRepository();
 List<Libro> lista = repo.buscarTodos();
 %>
 <body>
+<h1>Lista de Libros</h1>
 	<table>
+	<caption>Titulo de tabla</caption>
 		<tr>
 			<th>isbn</th>
 			<th>titulo</th>
