@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="es.cie.repositories.LibroRepositoryMemoria"%>
+<%@page import="es.cie.repositories.*"%>
 <%@page import="es.cie.negocio.Libro"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
@@ -11,10 +11,10 @@
 <link rel="stylesheet" href="estilo.css">
 </head>
 <%
-p
 
-LibroRepositoryMemoria repo = new LibroRepositoryMemoria();
-List<Libro> lista = repo.buscarTodos()
+
+LibroRepository repo = new LibroRepositoryMemoria();
+List<Libro> lista = repo.buscarTodos();
 %>
 <body>
 <h1>Lista de Libros</h1>

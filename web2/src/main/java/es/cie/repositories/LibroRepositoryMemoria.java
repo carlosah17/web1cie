@@ -7,7 +7,7 @@ import java.util.Vector;
 
 import es.cie.negocio.Libro;
 
-public class LibroRepositoryMemoria {
+public class LibroRepositoryMemoria implements LibroRepository {
 
 	private static List<Libro> lista = new ArrayList<Libro>();
 
@@ -23,11 +23,13 @@ public class LibroRepositoryMemoria {
 
 	}
 
+	@Override
 	public List<Libro> buscarTodos() {
 
 		return lista;
 	}
 
+	@Override
 	public List<Libro> buscarPorTitulo(String titulo) {
 
 		// este metodo genera una nueva lista
@@ -48,6 +50,7 @@ public class LibroRepositoryMemoria {
 		return listaNueva;
 	}
 
+	@Override
 	public List<Libro> buscarPorAutor(String autor) {
 
 		// este metodo genera una nueva lista

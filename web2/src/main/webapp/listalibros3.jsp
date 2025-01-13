@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="es.cie.repositories.LibroRepositoryMemoria"%>
+<%@page import="es.cie.repositories.*"%>
 <%@page import="es.cie.negocio.Libro"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@
 
 </head>
 <%
-p
 
-LibroRepositoryMemoria repo = new LibroRepositoryMemoria();
+
+LibroRepository repo = new LibroRepositoryMemoria();
 
 String titulo= request.getParameter("titulo");
 String autor= request.getParameter("autor");
