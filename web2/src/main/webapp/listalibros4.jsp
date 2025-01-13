@@ -8,18 +8,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="estilo.css">
+
 </head>
 <%
 p
 
 LibroRepositoryMemoria repo = new LibroRepositoryMemoria();
-List<Libro> lista = repo.buscarTodos()
+
+String tipobusqueda = request.getParameter("tipobusqueda");
+String textobusqueda = request.getParameter("textobusqueda");
+
+List<Libro> lista = null;
+
+if (tipobusqueda != null && textobusqueda != null) {
+
+	if (tipobusqueda.equals("titulo")) {
+
+		lista = repo.buscarPorTitulo(textobusqueda);
+	} else if (tipobusqueda.equals("autor")) {
+
+		lista = repo.buscarPorAutor(textobusqueda);
+	} else {
+
+		
+	}
+}else {
+	lista = repo.buscarTodos();
 %>
 <body>
-<h1>Lista de Libros</h1>
+	<form method="get">
+		<select name="tipobusqueda">
+			<option>titulo</option>
+			<option>autor</option>
+
+		</select> <input type="text" name="textobusqueda" /> 
+		<input type="submit"
+			value="buscar" />
+	</form>
+
+	<h1>Lista de Libros</h1>
 	<table>
-	<caption>Titulo de tabla</caption>
+		<caption>Titulo de tabla</caption>
 		<tr>
 			<th>isbn</th>
 			<th>titulo</th>
