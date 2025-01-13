@@ -12,7 +12,7 @@
 </head>
 <%
 
-LibroRepository repo = new LibroRepositoryMemoria();
+LibroRepository repo = new LibroRepositoryJDBC();
 
 String tipobusqueda = request.getParameter("tipobusqueda");
 String textobusqueda = request.getParameter("textobusqueda");
@@ -33,6 +33,8 @@ if (tipobusqueda != null && textobusqueda != null) {
 	}
 }else {
 	lista = repo.buscarTodos();
+	
+}
 %>
 <body>
 	<form method="get">
